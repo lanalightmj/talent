@@ -1,0 +1,740 @@
+@font-face{
+font-family: 'BigJohn';
+src: url('../fonts/BigJohn.otf');
+}
+@font-face{
+  font-family: 'Amble';
+  src: url('../fonts/Amble-Bold.ttf');
+}
+@font-face{
+  font-family: 'Amble';
+  src: url('../fonts/Amble-Light.ttf');
+}
+@font-face{
+   font-family: 'Amble';
+   src: url('../fonts/Amble-Italic.ttf');
+}
+@font-face{
+   font-family: 'Amble';
+   src: url('../fonts/Amble-LightItalic.ttf');
+}
+@font-face{
+   font-family: 'Amble';
+   src: url('../fonts/Amble-Regular.ttf');
+}
+
+@import "slick";
+@import "slick-theme";
+
+// variables
+$mainColor: #222;
+$mainBackground: #fff;
+
+$container: 1170px;
+$colGups: 15px;
+
+
+$textFont-size: 1rem;  // 16px
+$linkColor: blue;
+
+$breakpoints: (
+        xs: 0,
+        sm: 575px,
+        md: 768px,
+        lg: 1025px,
+        xl: 1200px,
+        xxl: 1440px
+);
+
+
+
+  //===========  mixins start ===========//
+
+// columns
+$columns: 12;
+
+
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+  @media only screen and (min-width: $size) {
+    [class*="col-#{$name}"] {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: $colGups;
+      padding-left: $colGups;
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-#{$i} {
+        flex-basis: 100% / $columns * $i;
+        max-width: 100% / $columns * $i;
+      }
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-offset-#{$i} {
+        margin-left: 100% / $columns * $i
+      }
+    }
+  }
+}
+
+
+.container{
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+// layout
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$colGups;
+  margin-left: -$colGups;
+}
+
+[class^='col']{
+  padding-left:$colGups;
+  padding-right:$colGups;
+  width: 100%;
+  min-height: 1px;
+}
+
+
+
+// main styles
+
+body{
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #222222;
+}
+
+//buttons
+a, button{
+  transition: .3s ease-in;
+  transition-property: color, background-color, opacity;
+  svg{
+    fill:currentColor;
+  }
+}
+button, .button{
+  cursor: pointer;
+}
+
+.button{
+
+}
+
+.ba-header{
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 310px;
+  }
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+  //=========== ba-header ===========//
+
+ .ba-header{
+    position: relative;
+    background: linear-gradient(to top left, rgba(213, 110, 78, 0.8), rgba(236, 163, 75, 0.8s)), url(../img/hero-bg.png) 50% no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    &__scroll{
+      position: absolute;
+      width: 30px;
+      height: 48px;
+      bottom: 61px;
+      left: 50%;
+      margin-left: -15px;
+      &:hover{
+        opacity: .5;
+      }
+    }
+ }
+
+ .hero{
+    width: 660px;
+    height: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    &__title{
+      display: block;
+      font-family: 'BigJohn', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 60px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 47px;
+    }
+    &__line_white{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 38px;
+    }
+    &__text{
+      display: block;
+      font-family: 'Amble', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: 0.05em;
+      text-align: center;
+      color: #fff;
+    }
+ }
+
+
+
+ //=========== ba-introduction ===========//
+
+ .ba-introduction{
+  height: 500px;
+  background-color: #fff;
+ }
+
+ .ba-intro-block{
+  display: block;
+  width: 770px;
+  height: 276px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 105px;
+  &__title{
+      display: block;
+      font-family: 'BigJohn', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 60px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 47px;
+    }
+    &__line_black{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 59px;
+      margin-bottom: 65px;
+    }
+    &__text{
+      display: block;
+      font-family: 'Amble', Arial, sans-serif;
+      font-weight: 200;
+      font-size: 22px;
+      line-height: 36px;
+      text-align: center;
+    }
+ }
+
+
+
+ //=========== ba-pure-creativity ===========//
+
+ .ba-pure-creativity{
+  position: relative;
+  width: auto;
+  height: 500px;
+  background: #282522 url(../img/keyboard.png) 50% no-repeat;
+  &:before{
+    content: " ";
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: #222222;
+    opacity: 0.4;
+  }
+  &__btn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+  }
+ }
+
+.btn-white{
+  background-color: transparent;
+  width: 430px;
+  height: 100px;
+  border: 3px solid #fff;
+  color: rgba(255, 255, 255, 1);
+  z-index: 5;
+  font-family: 'Amble', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  &:hover{
+      box-shadow: inset 0 0 0 5px #fff;
+    }
+    &:active{
+      opacity: .5;
+    }
+}
+
+
+
+//=========== ba-our-work ===========//
+
+.ba-our-work{
+  /* height: 1479px; */
+  padding-top: 120px;
+  &__title{
+    font-family: 'BigJohn', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 2;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__line_black{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 59px;
+      margin-bottom: 65px;
+    }
+  &__btn{
+    display: block;
+    width: 370px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 3px solid #222222;
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+.gallery{
+  margin-bottom: 59px;
+}
+.button-group{
+  display: flex;
+  justify-content: space-between;
+  width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button{
+  background-color: transparent;
+  border: none;
+  font-family: 'Myriad Pro', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  text-transform: uppercase;
+  &:hover{
+    color: #d87843;
+  }
+}
+.is-checked{
+  font-weight: 700;
+}
+.button + .button{
+  margin: 19px;
+}
+.item{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  &:nth-of-type(3n){
+    margin-right: 0;
+  }
+}
+
+
+
+//=========== ba-here-to-help ===========//
+
+.ba-here-to-help{
+  position: relative;
+  width: auto;
+  height: 500px;
+  background: #282522 url(../img/here_to_help.png) 50% no-repeat;
+  &:before{
+    content: " ";
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: #222222;
+    opacity: 0.4;
+  }
+  &__btn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+  }
+ }
+
+
+
+ //=========== our-clients ===========//
+
+ .our-clients{
+  height: 500px;
+  background: #f4f4f4 url(../img/clients.png) 50% no-repeat;
+  padding-top: 105px;
+  &__title{
+    font-family: 'BigJohn', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 2;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 59px;
+  }
+  &__line_black{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 103px;
+  }
+  &__block{
+    display: flex;
+    justify-content: space-between;
+  }
+ }
+
+
+
+//========== about-us ==========//
+
+.about-us{
+  height: 901px;
+  padding-top: 105px;
+  &__title{
+    font-family: 'BigJohn', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 2;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+  &__line_black{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 103px;
+  }
+  &__text{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 69px;
+  }
+  &__team{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__member{
+    background-color: #e9e9e9;
+  }
+}
+
+
+
+//========== video ==========//
+.ba-video{
+  height: 500px;
+}
+
+
+//========== ba-choose-us ==========//
+
+.ba-choose-us{
+  height: 960px;
+  padding-top: 120px;
+  &__title{
+    font-family: 'BigJohn', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 2;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+  &__line_black{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 68px;
+  }
+  &__text{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 93px;
+  }
+  &__slider{
+    
+  }
+  &__item{
+    width: 370px;
+  }
+  &__img-wrapper{
+    height: 151px;
+  }
+  &__img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+  }
+  &__item-title{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 37px;
+  }
+  &__item-text{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 93px;
+  }
+}
+.orange-txt{
+  color: #d87843;
+}
+.slick-active{
+  width: 22px;
+  height: 22px;
+}
+
+
+
+//=========== ba-get-a-quote-now ===========//
+
+.ba-get-a-quote-now{
+  position: relative;
+  width: auto;
+  height: 500px;
+  background: #282522 url(../img/quote.png) 50% no-repeat;
+  &:before{
+    content: " ";
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: #222222;
+    opacity: 0.4;
+  }
+  &__btn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+  }
+ }
+
+
+
+//========== get-in-touch ==========//
+
+.get-in-touch{
+  /* height: 1000px; */
+  padding-top: 120px;
+}
+
+.info{
+  height: 500px;
+  &__title{
+    font-family: 'BigJohn', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 2;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+  &__line_black{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 68px;
+  }
+  &__text{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 93px;
+  }
+}
+
+.contact{
+  display: flex;
+  height: 500px;
+  &__location{
+  height: 500px;
+  width: 38.44%;
+  background: #f2f2f2 url(../img/location-bg.png) no-repeat;
+  padding-top: 105px;
+  padding-left: 215px;
+  h3{
+    font-family: 'BigJohn', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 2;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 59px;
+  }
+  address{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0;
+    margin-bottom: 35px;
+  }
+  div{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    height: 40px;
+    svg{
+      width: 32px;
+      height: 32px;
+      fill: #222222;
+    }
+    svg:hover{
+      fill: #d87843;
+    }
+  }
+  }
+
+  &__form{
+  height: 500px;
+  width: 61.56%;
+  background: #e4e4e4 url(../img/form-bg.png) no-repeat;
+  padding-top: 100px;
+  padding-left: 100px;
+  input{
+    width: 300px;
+    height: 40px;
+    padding-left: 30px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #afafaf;
+  }
+  textarea{
+    width: 670px;
+    height: 40px;
+    padding-left: 30px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #afafaf;
+    margin-bottom: 40px;
+  }
+  input + input{
+    margin: 63px;
+  }
+  button{
+    display: block;
+    width: 183px;
+    height: 60px;
+    margin-right: 215px;
+    margin-left: auto;
+    background-color: transparent;
+    border: 3px solid #222222;
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 60px;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+}}
+
+
+
+
+//========== ba-footer ==========//
+
+.ba-footer{
+  background: #222222 url(../img/footer-bg.png) 50% no-repeat;
+  height: 360px;
+  padding-top: 100px;
+  &__logo img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 68px;
+  }
+  &__copyright{
+    display: block;
+    p{
+    font-family: 'Amble', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #fff;
+    }
+    span{
+      color: #d87843;
+    }
+  }
+}

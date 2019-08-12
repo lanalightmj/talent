@@ -1,3 +1,11 @@
+//========== menu ==========//
+(function($){
+  $(function() {
+    $('.menu__icon').on('click', function() {
+      $(this).closest('.menu').toggleClass('menu_state_open');
+    });
+  });
+
 //   ========== isotope =========
 $(document).ready(function(){
 	var $gallery = $('.gallery');
@@ -68,32 +76,32 @@ function sendAJAX(){
 }
 
 //for button load-more
-$(function(){
+//$(function(){
 
-	$('.load-more').on('click', function(){
-		const btn = $(this);
-		const loder = btn('.ba-our-work__btn');
-		$.ajax({
-			url: 'data.html',
-			type: 'GET',
-			beforeSend: function(){
-				btn.attr('diabled', true);
-				loader.addClass('d-innline-block');
-			},
-			succcess: function(response){
-				setTimeout(function(){
-					loader.removeClass('d-innline-block');
-					btn.attr('diabled', false);
-					console.log(response);
-				}, 1000);
-			},
-			error: function(){
-				alert('Error!');
-				loader.removeClass('d-innline-block');
-				btn.attr('diabled', false);
-			}
-		})	
-	});
+	//$('.load-more').on('click', function(){
+		//const btn = $(this);
+		//const loder = btn('.ba-our-work__btn');
+		//$.ajax({
+			//url: 'data.html',
+			//type: 'GET',
+			//beforeSend: function(){
+				//btn.attr('diabled', true);
+				//loader.addClass('d-innline-block');
+			//},
+			//succcess: function(response){
+				//setTimeout(function(){
+					//loader.removeClass('d-innline-block');
+					//btn.attr('diabled', false);
+					//console.log(response);
+				//}, 1000);
+			//},
+			//error: function(){
+				//alert('Error!');
+				//loader.removeClass('d-innline-block');
+				//btn.attr('diabled', false);
+			//}
+		//})	
+	//});
 
 
 

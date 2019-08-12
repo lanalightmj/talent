@@ -19,26 +19,61 @@
 
     <header class="ba-header">
 
-        <div class="ba-header__container">
-        <!--    <a href="#" class="ba-logo">Logo</a>
+        <div class="ba-header__container container">
+        <!--    <a href="#" class="ba-logo">Logo</a>-->
 
             <nav>
                 <ul class="menu row">
+
+                    <div class="menu__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!--<li class="menu__item ">
+                        <a href="#" class="menu__link">Home</a>
+                    </li>-->
                     <li class="menu__item ">
-                        <a href="#" class="menu__link">item 1</a>
+                        <a href="#introduction" class="menu__link">Introduction</a>
                     </li>
                     <li class="menu__item ">
-                        <a href="#" class="menu__link">item 2</a>
+                        <a href="#pure-creativity" class="menu__link">Pure Creativity</a>
                     </li>
                     <li class="menu__item ">
-                        <a href="#" class="menu__link">item 3</a>
+                        <a href="#our-work" class="menu__link">Our Work</a>
                     </li>
                     <li class="menu__item ">
-                        <a href="#" class="menu__link">item 4</a>
+                        <a href="#here-to-help" class="menu__link">We're here to help</a>
+                    </li>
+                    <li class="menu__item ">
+                        <a href="#our-clients" class="menu__link">Our Clients</a>
+                    </li>
+                    <li class="menu__item ">
+                        <a href="#about-us" class="menu__link">About Us</a>
+                    </li>
+                    <li class="menu__item ">
+                        <a href="#video" class="menu__link">Video</a>
+                    </li>
+                    <li class="menu__item ">
+                        <a href="#choose-us" class="menu__link">Choose Us</a>
+                    </li>
+                    <li class="menu__item ">
+                        <a href="#get-a-quote-now" class="menu__link">Get a Quote Now</a>
+                    </li>
+                    <!--<li class="menu__item ">
+                        <a href="#" class="menu__link">Get In Touch</a>
+                    </li>-->
+                    <li class="menu__item ">
+                        <a href="#contact" class="menu__link">Our Location</a>
+                    </li>
+                    <li class="menu__item ">
+                        <a href="#to-write-us" class="menu__link">Write Us</a>
                     </li>
                 </ul>
             </nav>
-        </div>  -->
+        </div>
 
         <div class="hero">
             <h1 class="hero__title">
@@ -60,7 +95,7 @@
     </header>
 
     <main>
-       <section class="ba-introduction">
+       <section id="introduction" class="ba-introduction">
             <div class="ba-intro-block">
                 <h2 class="ba-intro-block__title">
                     Introduction
@@ -73,14 +108,14 @@
             <!-- ba-introduction -->
         </section> 
 
-        <section class="ba-pure-creativity">
+        <section id="pure-creativity" class="ba-pure-creativity">
             <button class="ba-pure-creativity__btn btn-white">
                 Pure Creativity.
             </button>
             <!-- ba-pure-creativity -->
         </section>
 
-        <section class="ba-our-work">
+        <section id="our-work" class="ba-our-work">
             <div class="ba-our-work__container container">
                 <h2 class="ba-our-work__title">
                     some of our work
@@ -99,22 +134,22 @@
 
             <div class="gallery">
                 <div class="item web-disign">
-                    <img src="img/pancakes.png" alt="">
+                    <img src="img/pancakes.png" alt="web-disign" class="gallery__item--1">
                 </div>
                 <div class="item branding ">
-                    <img src="img/ocean.png" alt="">
+                    <img src="img/ocean.png" alt="branding" class="gallery__item--2">
                 </div>
                 <div class="item mobile-ui">
-                    <img src="img/blue.png" alt="">
+                    <img src="img/blue.png" alt="mobile-ui" class="gallery__item--3">
                 </div>
                 <div class="item illustrations">
-                    <img src="img/portico.png" alt="">
+                    <img src="img/portico.png" alt="illustrations" class="gallery__item--4">
                 </div>
                 <div class="item illustrations">
-                    <img src="img/smash.png" alt="">
+                    <img src="img/smash.png" alt="illustrations" class="gallery__item--5">
                 </div>
                 <div class="item web-disign">
-                    <img src="img/salt-site.png" alt="">
+                    <img src="img/salt-site.png" alt="web-disign" class="gallery__item--6">
                 </div>
             </div>
             
@@ -131,7 +166,7 @@
         </section>
 
 
-        <section class="ba-here-to-help">
+        <section id="here-to-help" class="ba-here-to-help">
             <button class="ba-here-to-help__btn btn-white">
                 We’re here to help.
             </button>
@@ -139,7 +174,7 @@
         </section>
 
 
-        <section class="our-clients">
+        <section id="our-clients" class="our-clients">
             <div class="container">
                 <h2 class="our-clients__title">our clients</h2>
                 <img src="img/line-black.png" alt="Black Line" class="our-clients__line_black">
@@ -164,7 +199,7 @@
             <!-- our-clients -->
         </section>
 
-        <section class="about-us">
+        <section id="about-us" class="about-us">
             <div class="about-us__container container">
                 <h2 class="about-us__title">
                     About us
@@ -191,14 +226,14 @@
             </div>
         </section>
 
-        <section class="ba-video">
+        <section id="video" class="ba-video">
             <video id="movie" width="100%" height="500" controls="controls" poster="video/poster.png">
                 <source src="#" type='video/ogg; codecs="theora, vorbis"'>
                 <source src="video/Welcome.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <source src="#" type='video/webm; codecs="vp8, vorbis"'>
         </section>
 
-        <section class="ba-choose-us">
+        <section id="choose-us" class="ba-choose-us">
             <div class="ba-choose-us__container container">
                 <h2 class="ba-choose-us__title">
                     Why choose us
@@ -264,7 +299,7 @@
             </div>
         </section>
 
-        <section class="ba-get-a-quote-now">
+        <section id="get-a-quote-now" class="ba-get-a-quote-now">
             <button class="ba-get-a-quote-now__btn btn-white">
                 Get a quote now.
             </button>
@@ -272,7 +307,7 @@
         </section>
 
 
-        <section class="get-in-touch">
+        <section id="get-in-touch" class="get-in-touch">
             <div class="get-in-touch__container container">
                 <div class="info">
                     <h2 class="info__title">
@@ -285,7 +320,7 @@
                 </div>
             </div>
 
-            <div class="contact">
+            <div id="contact" class="contact">
                 <div class="contact__location">
                     <h3>Our Location</h3>
                     <address>
